@@ -5,13 +5,14 @@
 boxes [xmin, ymin, xmax, ymax]
 """
 import torch
-from torchvision import trancforms
+from torchvision import transforms
 import cv2
+import numpy as np
 
 cv2.setNumThreads(0)
 cv2.ocl.setUseOpenCL(False)
 
-def intersect(bos_a, box_b):
+def intersect(box_a, box_b):
 	"""
 	Calculate the intersected area between two boxes.
 	Args:
